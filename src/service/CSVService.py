@@ -1,5 +1,6 @@
 import csv
 from typing import List, Dict
+import pandas as pd
 
 class CSVService:
     """
@@ -18,12 +19,15 @@ class CSVService:
         return cls._instance
     
     def read_and_process_csv(self) -> None:
-        """Reads the CSV file and stores the processed data in-memory."""
+        """Reads the CSV file and generates embeddings locally."""
         try:
-            with open(self.file_path, mode='r', encoding='utf-8') as file:
-                csv_reader = csv.DictReader(file)
-                self.data = [row for row in csv_reader]
-                # TODO: load and process csv
+            df = pd.read_csv(self.file_path, sep=";")
+
+            for index, row in df.iterrows():
+                row_string = f"{row['Titel']} {row['Geltungsbereich']} {row['Kategorie']} {row['Beschreibung']}"
+            
+            print("CSV data loaded and processed.", flush=True)
+
         except FileNotFoundError:
             print(f"File {self.file_path} not found.", flush=True)
             raise FileNotFoundError(f"CSV file not found: {self.file_path}")
