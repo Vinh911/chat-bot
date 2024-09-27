@@ -1,7 +1,12 @@
 # DISCLAIMER
 
 This is a prototype. Currently, it is only possible to send a message to the locally hosted LLM and receive a response. The project is still under development!
-The llm model is `Meta-Llama-3-8B-Instruct.Q4_0` which is not optimised for german inputs.
+Therefore:
+
+- The llm model is `Meta-Llama-3-8B-Instruct.Q4_0` which is not optimised for german inputs.
+- Initial starup may take up to 10min depending on the available bandwidth caused by the download of llama (4,6Gb!!)
+- Depending on the length of an response and the hardware, a response may take up to several minutes
+
 # Semantic search chatbot
 
 This chatbot prototype uses an unstructured dataset stored in a CSV file. Each piece of information in the dataset is associated with an embedding, enabling semantic search. A locally hosted Large Language Model (LLM) processes these embeddings and generates appropriate responses. This allows for interactive dialogue with the dataset, where users can ask questions and receive relevant answers.
