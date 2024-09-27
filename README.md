@@ -8,10 +8,11 @@ Therefore:
 - Depending on the length of an response and the hardware, a response may take up to several minutes
 
 # Semantic search chatbot
+This prototype chatbot enables semantic search over an unstructured dataset, which is stored in a CSV file. Each entry in the dataset is converted into a high-dimensional embedding—a numeric representation that captures the semantic meaning of the information. These embeddings allow for contextual search, where users can ask questions in natural language, and the chatbot will find and return the most semantically relevant information from the dataset.
 
-This chatbot prototype uses an unstructured dataset stored in a CSV file. Each piece of information in the dataset is associated with an embedding, enabling semantic search. A locally hosted Large Language Model (LLM) processes these embeddings and generates appropriate responses. This allows for interactive dialogue with the dataset, where users can ask questions and receive relevant answers.
+The core of the system is a locally hosted Large Language Model (LLM), which generates appropriate, context-aware responses. By leveraging this LLM, the chatbot can interact with users in a conversational manner, offering relevant insights and answers based on the dataset content.
 
-Since this is a prototype, it is assumed that the embeddings in the dataset are generated using the same embedding model as the one used in the project.
+# TODO: explain how it works in detail
 
 ## Project structure
 
